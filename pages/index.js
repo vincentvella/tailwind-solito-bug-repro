@@ -1,22 +1,14 @@
 // @generated: @expo/next-adapter@2.1.52
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { TailwindProvider } from 'tailwindcss-react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Welcome to Expo + Next.js 👋</Text>
-    </View>
+    <TailwindProvider>
+      <View className="flex-1 items-center justify-center bg-white">
+        <Text className="text-base">Welcome to Expo + Next.js 👋</Text>
+      </View>
+    </TailwindProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 16,
-  },
-});

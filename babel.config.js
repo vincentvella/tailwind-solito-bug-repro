@@ -1,4 +1,19 @@
-// @generated: @expo/next-adapter@2.1.52
-// Learn more: https://docs.expo.dev/guides/using-nextjs/
 
-module.exports = { presets: ['@expo/next-adapter/babel'] };
+const presets = ['@expo/next-adapter/babel']
+const plugins = ['tailwindcss-react-native/babel', 'react-native-reanimated/plugin']
+presets.unshift('next/babel')
+plugins.unshift(
+  'inline-react-svg',
+  'transform-flow-strip-types',
+  ['@babel/plugin-proposal-class-properties', { loose: true }],
+  ['@babel/plugin-proposal-private-methods', { loose: true }],
+  ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+)
+
+// console.log('plugins', plugins)
+// console.log('presets', presets)
+
+module.exports = {
+  plugins,
+  presets,
+};
